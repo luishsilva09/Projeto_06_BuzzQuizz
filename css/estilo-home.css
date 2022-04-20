@@ -2,14 +2,25 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #FAFAFA;
+}
+
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .barra-topo {
-    width: 100%;
+    width: 100vw;
     padding: 15px 0;
     font-size: 37px;
     text-align: center;
     font-weight: bold;
     background-color: #EC362D;
     color: #FFFFFF;
+}
+
+.escondido {
+    display: none;
 }

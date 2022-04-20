@@ -1,0 +1,51 @@
+.cadastro-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    box-sizing: border-box;
+}
+
+.cadastro-inicial > h3 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.informacoes-iniciais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #FFFFFE;
+}
+
+.informacoes-iniciais > input {
+    width: 95%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #D1D1D1;
+    font-size: 19px;
+}
+
+.cadastro-inicial > button {
+    margin-top: 60px;
+    padding: 16px 30px;
+    border: none;
+    font-size: 21px;
+    border-radius: 15px;
+    background-color: #EC362D;
+    color: #FFFFFE;
+}
+
+@media screen and (max-width: 1100px) {
+    .informacoes-iniciais {
+        width: 100%;
+    }
+
+    .cadastro-inicial > button {
+        width: 95%;
+        font-size: 18px;
+    }
+}
