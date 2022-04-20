@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30vw;
+    width: 600px;
     margin-top: 40px;
     padding: 20px;
     background-color: #FFFFFE;
@@ -46,13 +46,17 @@
     color: #FFFFFE;
 }
 
-.cadastro-perguntas {
+.cadastro-perguntas,
+.cadastro-niveis,
+.cadastro-sucesso {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 600px;
 }
 
-.topo-pergunta {
+.topo-pergunta,
+.topo-nivel {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +71,8 @@
     margin: 28px 0 20px 0;
 }
 
-.cadastro-pergunta {
+.cadastro-pergunta,
+.cadastro-nivel {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,7 +82,8 @@
     background-color: #FFFFFE;
 }
 
-.perguntas-respostas {
+.perguntas-respostas,
+.nivel {
     width: 100%;
 }
 
@@ -86,7 +92,8 @@
     margin-top: 20px;
 }
 
-.minimizada > .perguntas-respostas {
+.minimizada > .perguntas-respostas,
+.minimizada > .niveis {
     display: none;
 }
 
@@ -95,21 +102,58 @@
     margin: 28px 0 20px 0;
 }
 
+.quizz-imagem {
+    margin-top: 50px;
+    background-image: url("https://tm.ibxk.com.br/2022/01/06/06090650586027.jpg?ims=1120x420");
+    width: 500px;
+    height: 270px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.filtro-escuro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    opacity: 1;
+}
+
+.filtro-escuro > h4 {
+    margin: 24px;
+}
+
+.cadastro-sucesso button:last-child {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: #818181;
+}
+
 @media screen and (max-width: 1100px) {
-    .informacoes-iniciais {
+    .cadastro-quizz,
+    .informacoes-iniciais,
+    .cadastro-niveis,
+    .cadastro-perguntas,
+    .cadastro-sucesso {
         width: 100%;
     }
     
     .cadastro-quizz button {
-        width: 95%;
+        width: 80%;
         font-size: 18px;
     }
-    
-    .cadastro-perguntas {
-        width: 100%;
-    }
 
-    .cadastro-pergunta {
+    .cadastro-pergunta,
+    .cadastro-nivel,
+    .quizz-imagem{
         width: 90%;
+        height: 180px;
     }
 }
