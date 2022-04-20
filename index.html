@@ -19,7 +19,8 @@
         
         <!-- Página 3 -->
         <div class="cadastro-quizz">
-            <div class="cadastro-inicial">
+
+            <div class="cadastro-inicial escondido">
                 <h3>Comece pelo começo</h3>
 
                 <div class="informacoes-iniciais">
@@ -28,10 +29,74 @@
                     <input type="text" placeholder="Quantidade de perguntas do quizz" class="qtd-perguntas">
                     <input type="text" placeholder="Quantidade de níveis do quizz" class="qtd-niveis">
                 </div>
-
+                
                 <button>Prosseguir pra criar perguntas</button>
             </div>
+            
+            <div class="cadastro-perguntas">
+                <h3>Crie suas perguntas</h3>
+                
+                <div class="cadastro-pergunta">
+                    <div class="topo-pergunta">
+                        <h4>Pergunta 1</h4>
+                        <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
+                    </div>
+                    <div class="perguntas-respostas">
+                        <input type="text" placeholder="Texto da pergunta">
+                        <input type="text" placeholder="Cor de fundo da pergunta">
+    
+                        <h4>Resposta Correta</h4>
+                        <input type="text" placeholder="Texto da resposta">
+                        <input type="text" placeholder="URL da imagem">
+    
+                        <h4>Respostas Incorretas</h4>
+                        <div class="resposta-incorreta">
+                            <input type="text" placeholder="Resposta incorreta 1">
+                            <input type="text" placeholder="URL da imagem 1">
+                        </div>
+                        <div class="resposta-incorreta">
+                            <input type="text" placeholder="Resposta incorreta 2">
+                            <input type="text" placeholder="URL da imagem 2">
+                        </div>
+                        <div class="resposta-incorreta">
+                            <input type="text" placeholder="Resposta incorreta 3">
+                            <input type="text" placeholder="URL da imagem 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cadastro-pergunta minimizada">
+                <div class="topo-pergunta">
+                    <h4>Pergunta 2</h4>
+                    <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
+                </div>
+                <div class="perguntas-respostas">
+                    <input type="text" placeholder="Texto da pergunta">
+                    <input type="text" placeholder="Cor de fundo da pergunta">
+        
+                    <h4>Resposta Correta</h4>
+                    <input type="text" placeholder="Texto da resposta">
+                    <input type="text" placeholder="URL da imagem">
+        
+                    <h4>Respostas Incorretas</h4>
+                    <div class="resposta-incorreta">
+                        <input type="text" placeholder="Resposta incorreta 1">
+                        <input type="text" placeholder="URL da imagem 1">
+                    </div>
+                    <div class="resposta-incorreta">
+                        <input type="text" placeholder="Resposta incorreta 2">
+                        <input type="text" placeholder="URL da imagem 2">
+                    </div>
+                    <div class="resposta-incorreta">
+                        <input type="text" placeholder="Resposta incorreta 3">
+                        <input type="text" placeholder="URL da imagem 3">
+                    </div>
+                </div>
+                <button>Prosseguir para criar níveis</button>
+            </div>
 
+            </div>
         </div>
 
     </div>

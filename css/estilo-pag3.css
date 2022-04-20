@@ -1,12 +1,19 @@
-.cadastro-inicial {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 70px;
+.cadastro-quizz {
+    padding-top: 100px;
     box-sizing: border-box;
 }
 
-.cadastro-inicial > h3 {
+.cadastro-quizz > div {
+    margin-top: 20px;
+}
+
+.informacoes-iniciais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadastro-quizz h3 {
     font-size: 23px;
     font-weight: bold;
 }
@@ -21,15 +28,15 @@
     background-color: #FFFFFE;
 }
 
-.informacoes-iniciais > input {
-    width: 95%;
-    margin-top: 10px;
+.cadastro-quizz input {
+    width: 90%;
+    margin-top: 15px;
     padding: 10px 20px;
     border: 1px solid #D1D1D1;
     font-size: 19px;
 }
 
-.cadastro-inicial > button {
+.cadastro-quizz button {
     margin-top: 60px;
     padding: 16px 30px;
     border: none;
@@ -39,13 +46,70 @@
     color: #FFFFFE;
 }
 
+.cadastro-perguntas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topo-pergunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.cadastro-quizz h4 {
+    align-self: flex-start;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 28px 0 20px 0;
+}
+
+.cadastro-pergunta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #FFFFFE;
+}
+
+.perguntas-respostas {
+    width: 100%;
+}
+
+.resposta-incorreta {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.minimizada > .perguntas-respostas {
+    display: none;
+}
+
+.minimizada img {
+    opacity: 1;
+    margin: 28px 0 20px 0;
+}
+
 @media screen and (max-width: 1100px) {
     .informacoes-iniciais {
         width: 100%;
     }
-
-    .cadastro-inicial > button {
+    
+    .cadastro-quizz button {
         width: 95%;
         font-size: 18px;
+    }
+    
+    .cadastro-perguntas {
+        width: 100%;
+    }
+
+    .cadastro-pergunta {
+        width: 90%;
     }
 }
