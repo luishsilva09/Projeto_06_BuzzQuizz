@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/estilo-pag3.css">
     <link rel="stylesheet" href="./css/estilo-home.css">
+    <link rel="stylesheet" href="./css/estilo-pag2.css">
 
     <title>BuzzQuizz</title>
 </head>
@@ -19,8 +20,8 @@
             <h1>BuzzQuizz</h1>
         </div>
         <!--pagina 1-->
-        <div class="conteudo">
-            <div class="criarQuizz">
+        <div class="conteudo-home escondido">
+            <div class="criarQuizz ">
                 <h2>Você não criou nenhum </h2>
                 <h2>quizz ainda :(</h2>
                 <div class="btnCriar" onclick="">CriarQuizz</div>
@@ -45,8 +46,48 @@
                 </div>
             </div>
         </div>
+        <!--pagina 2-->
+        <div class="conteudo-pag2">
+            <div class="bannerPrincipal">
+                <p>O quão Potterhead é você?</p>
+            </div>
+            <div class="post">
+                <div class="pergunta">Em qual animal olho-tonto Moody transfigurou Malfoy?</div>
+                <div class="alternativas">
+                    <div class="resposta ">
+                        <img src="./imagens/teste.jpg" alt="">
+                        <p>ola</p>
+                    </div>
+                    <div class="resposta">
+                        <img src="./imagens/teste.jpg" alt="">
+                        <p>ola</p>
+                    </div>
+                    <div class="resposta">
+                        <img src="./imagens/teste.jpg" alt="">
+                        <p>ola</p>
+                    </div>
+                    <div class="resposta">
+                        <img src="./imagens/teste.jpg" alt="">
+                        <p>ola</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="post-final">
+                <div class="qtAcertos">
+                    <p>88%</p>
+                </div>
+                <div class="mensagem">
+                    <img src="./imagens/teste.jpg">
+                    <h2>parabesn</h2>
+                </div>
+            </div>
+            <div class="btnReiniciar">Reiniciar quizz</div>
+            <div class="voltarHome">Voltar para home</div>
+            
+        </div>
         <!-- Página 3 -->
-        <div class="cadastro-quizz">
+        <div class="cadastro-quizz escondido">
 
             <div class="cadastro-inicial escondido">
                 <h3>Comece pelo começo</h3>
@@ -57,13 +98,13 @@
                     <input type="text" placeholder="Quantidade de perguntas do quizz" class="qtd-perguntas">
                     <input type="text" placeholder="Quantidade de níveis do quizz" class="qtd-niveis">
                 </div>
-                
+
                 <button>Prosseguir pra criar perguntas</button>
             </div>
-            
+
             <div class="cadastro-perguntas">
                 <h3>Crie suas perguntas</h3>
-                
+
                 <div class="cadastro-pergunta">
                     <div class="topo-pergunta">
                         <h4>Pergunta 1</h4>
@@ -72,11 +113,11 @@
                     <div class="perguntas-respostas">
                         <input type="text" placeholder="Texto da pergunta">
                         <input type="text" placeholder="Cor de fundo da pergunta">
-    
+
                         <h4>Resposta Correta</h4>
                         <input type="text" placeholder="Texto da resposta">
                         <input type="text" placeholder="URL da imagem">
-    
+
                         <h4>Respostas Incorretas</h4>
                         <div class="resposta-incorreta">
                             <input type="text" placeholder="Resposta incorreta 1">
@@ -93,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="cadastro-pergunta minimizada">
                 <div class="topo-pergunta">
                     <h4>Pergunta 2</h4>
@@ -102,11 +143,11 @@
                 <div class="perguntas-respostas">
                     <input type="text" placeholder="Texto da pergunta">
                     <input type="text" placeholder="Cor de fundo da pergunta">
-        
+
                     <h4>Resposta Correta</h4>
                     <input type="text" placeholder="Texto da resposta">
                     <input type="text" placeholder="URL da imagem">
-        
+
                     <h4>Respostas Incorretas</h4>
                     <div class="resposta-incorreta">
                         <input type="text" placeholder="Resposta incorreta 1">
@@ -124,8 +165,8 @@
                 <button>Prosseguir para criar níveis</button>
             </div>
 
-            </div>
         </div>
+    </div>
 
     </div>
 
