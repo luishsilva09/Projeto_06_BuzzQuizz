@@ -5,7 +5,6 @@ body {
     background-color: #FAFAFA;
 }
 
-
 .container-principal {
     display: flex;
     flex-direction: column;
@@ -25,8 +24,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 4;
 }
+
 .conteudo-home{
     width: 1050px;
     display: flex;
@@ -34,24 +34,28 @@ body {
     align-items: center;
     margin-top: 80px;
 }
+
 .meusQuizz{  
     width: 100%;
     margin-top: 80px;
 }
+
 .meusQuizz ion-icon{
     color:#EC362D;
     font-size:25px;
     cursor: pointer;
 }
+
 .txtSeusQuizzes{
     display: flex;
     align-items: center;
 }
-.meusQuizz p, .quizzes p{
-    
+
+.meusQuizz p, .quizzes p{    
     font-size:20px ;
     font-weight: 700;
 }
+
 .criarQuizz{
     border: 1px dashed #D4D4D4;
     border-radius: 5px;
@@ -68,6 +72,7 @@ body {
     color:#B9B9B9;
     font-size: 20px;
 }
+
 .btnCriar{
     height: 40px;
     width: 136px;
@@ -81,10 +86,12 @@ body {
     color: #EC362D;
     font-size: 21px;
 }
+
 .btnCriar:hover{
     opacity: 60%;
     cursor: pointer;
 }
+
 .quizzes{ 
     width: 100%;
     margin-top: 77px;   
@@ -96,6 +103,7 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
 .quizzBanner{
     height: 181px;
     width: 340px;
@@ -107,6 +115,7 @@ body {
     margin-top: 10px;
 
 }
+
 .quizzBanner img{
     height: 181px;
     width: 340px;
@@ -114,6 +123,7 @@ body {
     position: absolute;
     z-index: 1;    
 }
+
 .quizzBanner h3{
     position: absolute;
     bottom: 10px;
@@ -125,6 +135,7 @@ body {
     z-index:3;
     word-break: break-all;
 }
+
 .gradiente{
     position: absolute; 
     height: 181px;
@@ -138,6 +149,7 @@ body {
 .escondido {
     display: none;
 }
+
 .invisivel {
     opacity: 0;
 }

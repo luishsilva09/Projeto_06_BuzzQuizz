@@ -1,8 +1,9 @@
-img{
+.resposta > img{
     height: 175px;
     width: 330px;
     object-fit: cover;
 }
+
 .conteudo-pag2{
     width: 100%;
     margin-top: 67px;
@@ -55,19 +56,22 @@ img{
     font-weight: 700;
     color:#fff
 }
+
 .mensagem{
     display: flex;
     font-size: 19px;
     font-weight: bold;
     color:#484848
 }
+
 .mensagem img{
     height: 270px;
     width: 360px;
     margin-right: 30px;
     object-fit: cover;
 }
-.pergunta{
+
+.post > .pergunta{
     background-color: purple;
     height: 138px;
     font-size: 23px;
@@ -79,6 +83,7 @@ img{
     margin-bottom: 21px; 
     word-break: break-all;
 }
+
 .alternativas{
     display: flex;
     flex-wrap: wrap;
@@ -88,11 +93,13 @@ img{
 .break{
     word-break:break-all;
 }
+
 .resposta p{
     font-size:20px;
     font-weight: 700;
     margin: 30px 0px; 
 }
+
 .btnReiniciar{
     height: 52px;
     width: 260px;
@@ -104,10 +111,13 @@ img{
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-}.btnReiniciar:hover, .voltarHome:hover{
+}
+
+.btnReiniciar:hover, .voltarHome:hover{
     opacity: 60%;
     cursor: pointer;
 }
+
 .voltarHome{
     color:#484848;
     font-size: 21px;
@@ -117,49 +127,60 @@ img{
 .certo{
     color:green;
 }
+
 .errado{
     color: red;
 }
+
 .deselecionado{
     opacity: 30%;
 }
+
 @media screen and (max-width: 1100px){
     
-    img{
+    .resposta > img{
         height: 113px;
         width: 163px;
     }
+
     .bannerPrincipal{
         height: 192px;
         font-size: 19px;
     }
-    .pergunta,.qtAcertos{
+
+    .post > .pergunta,
+    .qtAcertos{
         height: 89px;
         width: 340px;
         font-size: 19px;
         text-align: center;
     }
-    .post, .post-final{
+
+    .post,
+    .post-final{
         width: 375px;
         height: 436px;
         padding: 18px 17px;
     }
+
     .resposta p{
         font-size: 13px;
         margin: 10px 0px;
         
 
     }
+
     .post-final{
         height: auto;
     }
+
     .mensagem{
         display: block;
     }
+
     .mensagem img{
         height: 255px;
         width: 340px;
     }
-    
 
 }
