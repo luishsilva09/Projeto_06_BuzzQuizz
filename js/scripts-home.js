@@ -27,22 +27,5 @@ function selecionarQuizz(element) {
     console.log(id)
 };
 
-//abre o quizz selecionado
-function abrirQuizz(response) {
-    let dadosQuizz = response.data;
-    document.querySelector(".conteudo-home").classList.add("escondido");
-    document.querySelector(".conteudo-pag2").classList.remove("escondido");
-    for (let i = 0; i < dadosQuizz.questions.length; i++) { 
-        document.querySelector(".conteudo-pag2").innerHTML +=
-        `<div class="post">
-            <div class="pergunta">${dadosQuizz.questions[i].title}</div>
-            <div class="alternativas">
-                
-            </div>
-        </div>
-        `
-    } 
-    console.log(dadosQuizz.questions.length)
-    console.log(dadosQuizz)
-};
+
 buscarDados()
