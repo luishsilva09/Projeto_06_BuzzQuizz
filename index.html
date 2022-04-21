@@ -8,8 +8,9 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/estilo-pag3.css">
-    <link rel="stylesheet" href="./css/estilo-home.css">
     <link rel="stylesheet" href="./css/estilo-pag2.css">
+    <link rel="stylesheet" href="./css/estilo-home.css">
+   
 
     <title>BuzzQuizz</title>
 </head>
@@ -20,13 +21,13 @@
             <h1>BuzzQuizz</h1>
         </div>
         <!--pagina 1-->
-        <div class="conteudo escondido">
+        <div class="conteudo-home">
             <div class="criarQuizz">
                 <h2>Você não criou nenhum </h2>
                 <h2>quizz ainda :(</h2>
                 <div class="btnCriar" onclick="">CriarQuizz</div>
             </div>
-            <div class="meusQuizz">
+            <div class="meusQuizz escondido">
                 <div class="txtSeusQuizzes">
                     <p>Seus quizzes</p>
                     <ion-icon name="add-circle"></ion-icon>
@@ -40,14 +41,16 @@
             <div class="quizzes">
                 <p>Todos os Quizzes</p>
                 <div class="listaQuizz">
-                    <div class="quizzBanner">
+                    <div class="quizzBanner" onclick="selecionarQuizz(this)">
+                        <div class="gradiente"></div>
+                        <img src="./imagens/teste.jpg" alt="">
                         <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
                     </div>
                 </div>
             </div>
         </div>
         <!--pagina 2-->
-        <div class="conteudo-pag2">
+        <div class="conteudo-pag2 escondido">
             <div class="bannerPrincipal">
                 <p>O quão Potterhead é você?</p>
             </div>
@@ -73,7 +76,7 @@
 
                 </div>
             </div>
-            <div class="post-final">
+            <div class="post-final escondido">
                 <div class="qtAcertos">
                     <p>88%</p>
                 </div>
@@ -82,8 +85,8 @@
                     <h2>parabesn</h2>
                 </div>
             </div>
-            <div class="btnReiniciar">Reiniciar quizz</div>
-            <div class="voltarHome">Voltar para home</div>
+            <div class="btnReiniciar escondido">Reiniciar quizz</div>
+            <div class="voltarHome escondido">Voltar para home</div>
             
         </div>
         <!-- Página 3 -->

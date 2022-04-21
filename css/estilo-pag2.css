@@ -15,7 +15,7 @@ img{
 .bannerPrincipal{
     height: 227px;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.5) , rgb(0, 0, 0, 0.5)  ),url('https://img.elo7.com.br/product/zoom/1F151A7/cubo-magico-minicraft.jpg') ;
+    background: linear-gradient(rgba(0,0,0,0.5) , rgb(0, 0, 0, 0.5)  ),url('https://img.elo7.com.br/product/zoom/1F151A7/cubo-magico-minicraft.jpg') ;
     background-size:contain;
     display: flex;
     align-items: center;
@@ -77,6 +77,7 @@ img{
     align-items: center;
     justify-content: center;  
     margin-bottom: 21px; 
+    word-break: break-all;
 }
 .alternativas{
     display: flex;
