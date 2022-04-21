@@ -25,7 +25,7 @@
             <div class="criarQuizz">
                 <h2>Você não criou nenhum </h2>
                 <h2>quizz ainda :(</h2>
-                <div class="btnCriar" onclick="">CriarQuizz</div>
+                <div class="btnCriar" onclick="direcionarCriacaoQuizz()">CriarQuizz</div>
             </div>
             <div class="meusQuizz escondido">
                 <div class="txtSeusQuizzes">
@@ -102,10 +102,10 @@
                     <input type="text" placeholder="Quantidade de níveis do quizz" class="qtd-niveis">
                 </div>
 
-                <button>Prosseguir pra criar perguntas</button>
+                <button onclick="direcionarCadastroPerguntas()">Prosseguir pra criar perguntas</button>
             </div>
 
-            <div class="cadastro-perguntas">
+            <div class="cadastro-perguntas escondido">
                 <h3>Crie suas perguntas</h3>
 
                 <div class="cadastro-pergunta">
@@ -163,7 +163,7 @@
                             <input type="text" placeholder="URL da imagem 3">
                         </div>
                     </div>
-                    <button>Prosseguir para criar níveis</button>
+                    <button onclick="direcionarCadastroNiveis()">Prosseguir para criar níveis</button>
                 </div>
             </div>
             
@@ -193,10 +193,10 @@
                         <input type="text" placeholder="Descrição do nível">
                     </div>
                 </div>
-                <button>Finalizar Quizz</button>
+                <button onclick="direcionarSucessoCadastro()">Finalizar Quizz</button>
             </div>
 
-            <div class="cadastro-sucesso">
+            <div class="cadastro-sucesso escondido">
                 <h3>Seu quizz está pronto!</h3>
                 <div class="quizz-imagem">
                     <div class="filtro-escuro">
@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <button>Acessar Quizz</button>
-                <button>Voltar para home</button>
+                <button onclick="direcionarCadastroParaHome()">Voltar para home</button>
             </div>
             
         </div>
@@ -217,6 +217,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="./js/scripts-home.js"></script>
+    <script src="./js/script-pag3.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,9 @@
-img{
+.resposta > img{
     height: 175px;
     width: 330px;
     object-fit: cover;
 }
+
 .conteudo-pag2{
     width: 100%;
     margin-top: 67px;

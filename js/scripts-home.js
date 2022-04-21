@@ -1,3 +1,11 @@
+// funções de direcionamento
+
+function direcionarCriacaoQuizz() {
+    document.querySelector(".conteudo-home").classList.add("escondido");
+    document.querySelector(".cadastro-quizz").classList.remove("escondido");
+    document.querySelector(".cadastro-inicial").classList.remove("escondido");
+}
+
 //buscar os dados no servidor usando o servidor da t4
 function buscarDados() {
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
