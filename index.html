@@ -59,20 +59,20 @@
 
             <div class="cadastro-inicial">
                 <h3>Comece pelo começo</h3>
-
+                
                 <div class="informacoes-iniciais">
                     <input type="text" placeholder="Título do seu quizz" class="titulo">
                     <input type="text" placeholder="URL da imagem do seu quizz" class="url-img">
                     <input type="text" placeholder="Quantidade de perguntas do quizz" class="qtd-perguntas">
                     <input type="text" placeholder="Quantidade de níveis do quizz" class="qtd-niveis">
                 </div>
-
+                
                 <button onclick="coletarDadosIniciais()">Prosseguir pra criar perguntas</button>
             </div>
 
             <div class="cadastro-perguntas escondido">
                 <h3>Crie suas perguntas</h3>
-
+                
                 <div class="cadastro-pergunta selecionada" onclick="selecionarPerguntaCadastro(this)">
                     <div class="topo-pergunta">
                         <h4>Pergunta 1</h4>
@@ -85,7 +85,7 @@
                         <h4>Resposta Correta</h4>
                         <input type="text" class="resposta-certa" placeholder="Texto da resposta">
                         <input type="text" class="imagem-resposta-certa" placeholder="URL da imagem">
-
+                        
                         <h4>Respostas Incorretas</h4>
                         <div class="resposta-incorreta">
                             <input type="text" placeholder="Resposta incorreta 1">
@@ -134,31 +134,33 @@
 
 
             <div class="cadastro-niveis escondido">
-                <div class="cadastro-nivel">
+                <h3>Agora, decida os níveis</h3>
+
+                <div class="cadastro-nivel selecionada" onclick="selecionarNivelCadastro(this)">
                     <div class="topo-nivel">
                         <h4>Nível 1</h4>
                         <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
                     </div>
-                    <div class="niveis">
-                        <input type="text" placeholder="Texto do nível">
-                        <input type="text" placeholder="% de acerto mínimo">
-                        <input type="text" placeholder="URL da imagem do nível">
-                        <input type="text" placeholder="Descrição do nível">
+                    <div class="nivel">
+                        <input type="text" placeholder="Título do nível" class="titulo-nivel">
+                        <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
+                        <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
+                        <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
                     </div>
                 </div>
-                <div class="cadastro-nivel minimizada">
+                <div class="cadastro-nivel" onclick="selecionarNivelCadastro(this)">
                     <div class="topo-nivel">
                         <h4>Nível 2</h4>
                         <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
                     </div>
-                    <div class="niveis">
-                        <input type="text" placeholder="Texto do nível">
-                        <input type="text" placeholder="% de acerto mínimo">
-                        <input type="text" placeholder="URL da imagem do nível">
-                        <input type="text" placeholder="Descrição do nível">
+                    <div class="nivel">
+                        <input type="text" placeholder="Título do nível" class="titulo-nivel">
+                        <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
+                        <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
+                        <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
                     </div>
                 </div>
-                <button onclick="direcionarSucessoCadastro()">Finalizar Quizz</button>
+                <button onclick="coletarDadosNiveis()">Finalizar Quizz</button>
             </div>
 
             <div class="cadastro-sucesso escondido">

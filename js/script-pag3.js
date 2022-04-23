@@ -1,10 +1,16 @@
 let imagemInvalida;
 let qtdPerguntas;
+let qtdNiveis;
 // funcoes de estilo
 
 function selecionarPerguntaCadastro(containerPergunta) {
     document.querySelector(".cadastro-perguntas .selecionada").classList.remove("selecionada");
     containerPergunta.classList.add("selecionada");
+}
+
+function selecionarNivelCadastro(containerNivel) {
+    document.querySelector(".cadastro-niveis .selecionada").classList.remove("selecionada");
+    containerNivel.classList.add("selecionada");
 }
 
 // funcoes de redirecionamento entre páginas
@@ -44,9 +50,36 @@ function carregarUrlImagem(url) {
     }
 }
 
+function adicionaCadastroNiveisHTML() {
+
+    document.querySelector(".cadastro-quizz .cadastro-niveis").innerHTML = "<h3>Agora, decida os níveis</h3>";
+
+    for(let i = 0; i < qtdNiveis; i++) {
+        document.querySelector(".cadastro-quizz .cadastro-niveis").innerHTML += `
+            <div class="cadastro-nivel" onclick="selecionarNivelCadastro(this)">
+                <div class="topo-nivel">
+                    <h4>Nível ${i + 1}</h4>
+                    <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
+                </div>
+                <div class="nivel">
+                    <input type="text" placeholder="Título do nível" class="titulo-nivel">
+                    <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
+                    <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
+                    <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
+                </div>
+            </div>
+        `
+    }
+
+    document.querySelector(".cadastro-niveis .cadastro-nivel").classList.add("selecionada");
+    document.querySelector(".cadastro-nivel").innerHTML += `
+        <button onclick="coletarDadosNiveis()">Finalizar Quizz</button>
+    `
+}
+
 function adicionaCadastroPerguntasHTML() {
 
-    document.querySelector(".cadastro-quizz .cadastro-perguntas").innerHTML = "";
+    document.querySelector(".cadastro-quizz .cadastro-perguntas").innerHTML = "<h3>Crie suas perguntas</h3>";
 
     for(let i = 0; i < qtdPerguntas; i++) {
         document.querySelector(".cadastro-quizz .cadastro-perguntas").innerHTML += `
@@ -80,11 +113,11 @@ function adicionaCadastroPerguntasHTML() {
         </div>
         `
     }
-
-    document.querySelector(".cadastro-perguntas .cadastro-pergunta:first-child").classList.add("selecionada");
+    
+    document.querySelector(".cadastro-perguntas .cadastro-pergunta").classList.add("selecionada");
     document.querySelector(".cadastro-perguntas").innerHTML += `
         <button onclick="coletarDadosPerguntas()">Prosseguir para criar níveis</button>
-        `
+    `
 }
 
 function coletarDadosIniciais() {
@@ -92,7 +125,7 @@ function coletarDadosIniciais() {
     const tituloQuizFormatado = tituloQuiz.join(" ");
     const urlImagem = document.querySelector(".informacoes-iniciais .url-img").value;
     qtdPerguntas = Number(document.querySelector(".informacoes-iniciais .qtd-perguntas").value);
-    const qtdNiveis = Number(document.querySelector(".informacoes-iniciais .qtd-niveis").value);
+    qtdNiveis = Number(document.querySelector(".informacoes-iniciais .qtd-niveis").value);
 
     carregarUrlImagem(urlImagem);
 
@@ -116,6 +149,7 @@ function coletarDadosIniciais() {
             document.querySelector(".informacoes-iniciais .qtd-niveis").value = "";
 
             adicionaCadastroPerguntasHTML();
+            adicionaCadastroNiveisHTML;
             direcionarCadastroPerguntas();
         }
     }, 400);
@@ -123,11 +157,9 @@ function coletarDadosIniciais() {
 
 function coletarDadosPerguntas() {
     const perguntas = document.querySelectorAll(".cadastro-quizz .cadastro-pergunta");
-    let preenchidoCorretamente;
 
     for(let i = 0; i < qtdPerguntas; i++) {
         setTimeout(function () {
-            preenchidoCorretamente = false;
             const containerPerguntasRespostas = perguntas[i].querySelector(".perguntas-respostas");
     
             const textoPergunta = containerPerguntasRespostas.querySelector(".pergunta").value.split(" ").filter(palavra => palavra !== "");
@@ -173,20 +205,52 @@ function coletarDadosPerguntas() {
                 } else if(qtdRespostasVazias > 2) {
                     alert("Deve haver pelo menos uma resposta incorreta");
                     i = qtdPerguntas + 1;
-                } else {
-                    preenchidoCorretamente = true;
+                } else if((i + 1) === qtdPerguntas) {
+                    direcionarCadastroNiveis();
                 }
     
-            }, 200 * (imgRespostasErradas.length + 1));
-        }, 260 * (qtdPerguntas * 3 + 1));
+            }, 300 * (imgRespostasErradas.length));
+        }, 360 * (qtdPerguntas * 3 + 1));
     }
+}
 
-    setTimeout(function () {
-        console.log(preenchidoCorretamente);
-        if(preenchidoCorretamente) {
-            direcionarCadastroNiveis();
+function coletarDadosNiveis() {
+    const containersNiveis = document.querySelectorAll(".cadastro-niveis .cadastro-nivel");
+    let porcentagemMaiorZero = 0;
+    qtdNiveis = containersNiveis.length;
+    
+    for(let i = 0; i < containersNiveis.length; i++) {
+        const containerNivel = containersNiveis[i].querySelector(".nivel");
+        
+        const tituloNivel = containerNivel.querySelector(".titulo-nivel").value.split(" ").filter(palavra => palavra !== "");
+        const tituloNivelFormatado = tituloNivel.join(" ");
+        const porcentagemAcerto = parseInt(containerNivel.querySelector(".porcentagem-acerto").value.replace("%", "")); 
+        const imgUrlNivel = containerNivel.querySelector(".img-nivel").value;
+        const descricaoNivel = containerNivel.querySelector(".descricao-nivel").value.split(" ").filter(palavra => palavra !== "");
+        const descricaoNivelFormatada = descricaoNivel.join(" ");
+        
+        carregarUrlImagem(imgUrlNivel);
 
+        if(porcentagemAcerto !== 0) {
+            porcentagemMaiorZero++;
         }
-    }, 400 * (qtdPerguntas * 3 + 1))
+
+        setTimeout(function () {
+            if(tituloNivelFormatado.length < 10) {
+                alert("O título do nível deve ter pelo menos 10 caracteres");
+            } else if(porcentagemAcerto < 0 || porcentagemAcerto > 100 || isNaN(porcentagemAcerto)) {
+                alert("A porcentagem de acerto deve ser um valor entre 0 e 100");
+            } else if(imagemInvalida) {
+                alert("A URL da imagem é inválida");
+            } else if(descricaoNivelFormatada.length < 30) {
+                alert("A descrição do nível deve ter pelo menos 30 caracteres");
+            } else if(porcentagemMaiorZero === qtdNiveis) {
+                alert("Deve haver pelo menos um nível onde a porcentagem de acertos é 0")
+            } else if((i + 1) === qtdNiveis) {
+                direcionarSucessoCadastro();
+            }
+        }, 400 * (qtdNiveis));
+
+    }
 
 }
