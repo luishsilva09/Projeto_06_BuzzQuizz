@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/estilo-pag3.css">
     <link rel="stylesheet" href="./css/estilo-pag2.css">
     <link rel="stylesheet" href="./css/estilo-home.css">
-   
+
 
     <title>BuzzQuizz</title>
 </head>
@@ -21,7 +21,7 @@
             <h1>BuzzQuizz</h1>
         </div>
         <!--pagina 1-->
-        <div class="conteudo-home escondido">
+        <div class="conteudo-home ">
             <div class="criarQuizz">
                 <h2>Você não criou nenhum </h2>
                 <h2>quizz ainda :(</h2>
@@ -41,56 +41,21 @@
             <div class="quizzes">
                 <p>Todos os Quizzes</p>
                 <div class="listaQuizz">
-                    <div class="quizzBanner" onclick="selecionarQuizz(this)">
-                        <div class="gradiente"></div>
-                        <img src="./imagens/teste.jpg" alt="">
-                        <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
-                    </div>
+                  
                 </div>
             </div>
         </div>
         <!--pagina 2-->
         <div class="conteudo-pag2 escondido">
             <div class="bannerPrincipal">
-                <p>O quão Potterhead é você?</p>
             </div>
-            <div class="post">
-                <div class="pergunta">Em qual animal olho-tonto Moody transfigurou Malfoy?</div>
-                <div class="alternativas">
-                    <div class="resposta ">
-                        <img src="./imagens/teste.jpg" alt="">
-                        <p>ola</p>
-                    </div>
-                    <div class="resposta">
-                        <img src="./imagens/teste.jpg" alt="">
-                        <p>ola</p>
-                    </div>
-                    <div class="resposta">
-                        <img src="./imagens/teste.jpg" alt="">
-                        <p>ola</p>
-                    </div>
-                    <div class="resposta">
-                        <img src="./imagens/teste.jpg" alt="">
-                        <p>ola</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="post-final escondido">
-                <div class="qtAcertos">
-                    <p>88%</p>
-                </div>
-                <div class="mensagem">
-                    <img src="./imagens/teste.jpg">
-                    <h2>parabesn</h2>
-                </div>
-            </div>
-            <div class="btnReiniciar escondido">Reiniciar quizz</div>
-            <div class="voltarHome escondido">Voltar para home</div>
-            
+        </div>
+            <div class="inferior escondido">
+                <div class="btnReiniciar " onclick="reiniciar()">Reiniciar quizz</div>
+                <div class="voltarHome " onclick="voltaHome()">Voltar para home</div>  
         </div>
         <!-- Página 3 -->
-        <div class="cadastro-quizz">
+        <div class="cadastro-quizz escondido">
 
             <div class="cadastro-inicial">
                 <h3>Comece pelo começo</h3>
@@ -115,8 +80,8 @@
                     </div>
                     <div class="perguntas-respostas">
                         <input type="text" class="pergunta" placeholder="Texto da pergunta">
-                        <input type="text" class= "cor-pergunta" placeholder="Cor de fundo da pergunta">
-                        
+                        <input type="text" class="cor-pergunta" placeholder="Cor de fundo da pergunta">
+
                         <h4>Resposta Correta</h4>
                         <input type="text" class="resposta-certa" placeholder="Texto da resposta">
                         <input type="text" class="imagem-resposta-certa" placeholder="URL da imagem">
@@ -144,11 +109,11 @@
                     <div class="perguntas-respostas">
                         <input type="text" placeholder="Texto da pergunta">
                         <input type="text" placeholder="Cor de fundo da pergunta">
-                        
+
                         <h4>Resposta Correta</h4>
                         <input type="text" placeholder="Texto da resposta">
                         <input type="text" placeholder="URL da imagem">
-                        
+
                         <h4>Respostas Incorretas</h4>
                         <div class="resposta-incorreta">
                             <input type="text" placeholder="Resposta incorreta 1">
@@ -166,8 +131,8 @@
                 </div>
                 <button onclick="coletarDadosPerguntas()">Prosseguir para criar níveis</button>
             </div>
-            
-            
+
+
             <div class="cadastro-niveis escondido">
                 <h3>Agora, decida os níveis</h3>
 
@@ -208,9 +173,9 @@
                 <button>Acessar Quizz</button>
                 <button onclick="direcionarCadastroParaHome()">Voltar para home</button>
             </div>
-            
+
         </div>
-        </div>
+    </div>
     </div>
 
     </div>
@@ -219,6 +184,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="./js/scripts-home.js"></script>
+    <script src="./js/script-pag2.js"></script>
     <script src="./js/script-pag3.js"></script>
 </body>
 
