@@ -95,13 +95,13 @@
 }
 
 .selecionada > .perguntas-respostas,
-.selecionada > .niveis {
+.selecionada > .nivel {
     display: flex;
     flex-direction: column;
 }
 
 .perguntas-respostas img,
-.nivel img {
+.cadastro-nivel img {
     opacity: 1;
     margin: 28px 0 20px 0;
 }
