@@ -7,19 +7,33 @@ let numeroPost = 0; //mostra o numero de perguntas
 function randOrd() {
     return (Math.round(Math.random()) - 0.5);
 }
-//abre o quizz selecionado randomiza as respostas 
-function abrirQuizz(response) {
 
+// funções para selecionar quizz
+
+function selecionarQuizzGeral(response) {
     dadosQuizz = response.data;
+    abrirQuizz();
+}
+
+function selecionarQuizzCriado(quizz) {
+    dadosQuizz = quizz;
+    abrirQuizz();
+}
+
+
+//abre o quizz selecionado randomiza as respostas 
+function abrirQuizz() {
+
     document.querySelector(".conteudo-home").classList.add("escondido");
     document.querySelector(".conteudo-pag2").classList.remove("escondido");
-    document.querySelector(".inferior").classList.remove("escondido")
+    document.querySelector(".inferior").classList.remove("escondido");
     document.querySelector(".conteudo-pag2 .bannerPrincipal").innerHTML =
         `<p>${dadosQuizz.title}</p>`;
 
     document.querySelector(".conteudo-pag2 .bannerPrincipal").style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6) , rgb(0, 0, 0, 0.6)  ), url('${dadosQuizz.image}')`;
     renderizarQuizzSelecionado();
 };
+
 function renderizarQuizzSelecionado() {
     for (let i = 0; i < dadosQuizz.questions.length; i++) {
         let cont = 0;
@@ -33,7 +47,6 @@ function renderizarQuizzSelecionado() {
             `<div class="post" id="${i}">
             <div class="pergunta">${pergunta.texto}</div>
             <div class="alternativas"></div>
-            
         </div> `;
         while (cont < dadosQuizz.questions[i].answers.length) {
             resposta.push({

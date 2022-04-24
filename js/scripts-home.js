@@ -16,7 +16,7 @@ function buscarDados() {
 //rederizar os quizzes para o usuario
 function renderizarQuizz(response) {
     let dados = response.data;
-    console.log(dados);
+    
     for (let i = 0; i < dados.length; i++) {
         document.querySelector(".quizzes .listaQuizz").innerHTML +=
             `<div class="quizzBanner" onclick="selecionarQuizz(this)" id="${dados[i].id}">
@@ -31,7 +31,7 @@ function renderizarQuizz(response) {
 function selecionarQuizz(element) {
     let id = element.getAttribute('id');
     const promise = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${id}`);
-    promise.then(abrirQuizz);
+    promise.then(selecionarQuizzGeral);
 
     console.log(id)
 };
