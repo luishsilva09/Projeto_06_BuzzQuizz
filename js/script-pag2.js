@@ -12,6 +12,7 @@ function randOrd() {
 
 function selecionarQuizzGeral(response) {
     dadosQuizz = response.data;
+    console.log(dadosQuizz)
     abrirQuizz();
 }
 
@@ -35,6 +36,7 @@ function abrirQuizz() {
 };
 
 function renderizarQuizzSelecionado() {
+    document.querySelector(".quizzes .listaQuizz").innerHTML ='';
     for (let i = 0; i < dadosQuizz.questions.length; i++) {
         let cont = 0;
         let resposta = [];
@@ -45,7 +47,7 @@ function renderizarQuizzSelecionado() {
 
         document.querySelector(".conteudo-pag2").innerHTML +=
             `<div class="post" id="${i}">
-                <div class="pergunta">${pergunta.texto}</div>
+                <div class="pergunta"><p>${pergunta.texto}</p></div>
                 <div class="alternativas"></div>
             </div>`
         ;
@@ -62,7 +64,7 @@ function renderizarQuizzSelecionado() {
         resposta.sort(randOrd);
 
         for (let x = 0; x < resposta.length; x++) {
-            let post = document.querySelector(`.post:nth-child(${i + 2})`);
+            let post = document.getElementById(`${i}`);
 
             post.querySelector(".pergunta").style.backgroundColor = `${pergunta.cor}`
             post.querySelector(".alternativas").innerHTML += `
@@ -153,6 +155,10 @@ function reiniciar() {
     numeroPost = 0;
     respondido = 0;
     acertos = 0;
-    document.querySelector(".conteudo-pag2").innerHTML = '';
+    document.querySelector(".conteudo-pag2").innerHTML = `
+    <div class='bannerPrincipal'></div>`;
+    document.querySelector(".conteudo-pag2 .bannerPrincipal").innerHTML =
+        `<p>${dadosQuizz.title}</p>`;
+    document.querySelector(".conteudo-pag2 .bannerPrincipal").style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6) , rgb(0, 0, 0, 0.6)  ), url('${dadosQuizz.image}')`;
     renderizarQuizzSelecionado();
 };

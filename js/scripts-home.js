@@ -1,6 +1,6 @@
 window.scrollTo(0, 0) // carregar pagina no topo
 
-let meusQuizzId =[1];
+let meusQuizzId = JSON.parse(localStorage.getItem("listaIds"));
 let dados = [];
 // funções de direcionamento
 
@@ -45,22 +45,28 @@ function home(){
 };
 
 function meuQuizz(){
-    if (meusQuizzId != ''){
+    if (meusQuizzId != '' && meusQuizzId != null){
         document.querySelector(".conteudo-home .criarQuizz").classList.add("escondido")
         document.querySelector(".conteudo-home .meusQuizz ").classList.remove("escondido")
-        for(let i = 0; i < meusQuizzId.length;i++){
+        for (let i = 0; i < meusQuizzId.length; i++) {
             let meu = meusQuizzId[i]
             const promise = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${meu}`);
             promise.then(renderizarMeusQuizz)
-            
+
         };
-        
+
     };
 };
 
 function renderizarMeusQuizz(response){
     let dadosMeu =[];
     dadosMeu = response.data
+
+    for (let i = 0; i < dados.length; i++) {
+        if (dadosMeu.id === dados[i].id) {
+            document.getElementById(`${dadosMeu.id}`).classList.add("escondido")
+        };
+    };
     document.querySelector(".meusQuizz .listaQuizz").innerHTML +=
     `<div class="quizzBanner" onclick="selecionarQuizz(this)" id="${dadosMeu.id}">
     <div class="gradiente"></div>
