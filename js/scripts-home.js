@@ -19,31 +19,33 @@ function buscarDados() {
 //rederizar os quizzes para o usuario
 function renderizarQuizz(response) {
     dados = response.data;
+
     for (let i = 0; i < dados.length; i++) {
         document.querySelector(".quizzes .listaQuizz").innerHTML +=
             `<div class="quizzBanner" onclick="selecionarQuizz(this)" id="${dados[i].id}">
-            <div class="gradiente"></div>
-            <img src="${dados[i].image}">
-            <h3>${dados[i].title}</h3>
-        </div>`;
+                <div class="gradiente"></div>
+                <img src="${dados[i].image}">
+                <h3>${dados[i].title}</h3>
+            </div>
+        `;
 
-    };
-    console.log(dados)
+    }
+
     meuQuizz();
 };
 //fazer a seleção de qul o quizz quer
 function selecionarQuizz(element) {
     let id = element.getAttribute('id');
     const promise = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${id}`);
-    promise.then(abrirQuizz);
+    promise.then(selecionarQuizzGeral);
 };
-//voltar home clicando na logo  
-function home() {
+
+function home(){
     window.location.reload();
 };
-//verifica quizz do usuario
-function meuQuizz() {
-    if (meusQuizzId != '') {
+
+function meuQuizz(){
+    if (meusQuizzId != ''){
         document.querySelector(".conteudo-home .criarQuizz").classList.add("escondido")
         document.querySelector(".conteudo-home .meusQuizz ").classList.remove("escondido")
         for (let i = 0; i < meusQuizzId.length; i++) {
@@ -55,9 +57,9 @@ function meuQuizz() {
 
     };
 };
-//faz a renderização do quiz do usuario e faz sumir do todos
-function renderizarMeusQuizz(response) {
-    let dadosMeu = [];
+
+function renderizarMeusQuizz(response){
+    let dadosMeu =[];
     dadosMeu = response.data
 
     for (let i = 0; i < dados.length; i++) {
@@ -66,12 +68,12 @@ function renderizarMeusQuizz(response) {
         };
     };
     document.querySelector(".meusQuizz .listaQuizz").innerHTML +=
-        `<div class="quizzBanner" onclick="selecionarQuizz(this)" id="${dadosMeu.id}">
-        <div class="gradiente"></div>
-        <img src="${dadosMeu.image}">
-        <h3>${dadosMeu.title}</h3>
-    </div>`;
+    `<div class="quizzBanner" onclick="selecionarQuizz(this)" id="${dadosMeu.id}">
+    <div class="gradiente"></div>
+    <img src="${dadosMeu.image}">
+    <h3>${dadosMeu.title}</h3>
+</div>`;
 
 };
-buscarDados();
 
+buscarDados();

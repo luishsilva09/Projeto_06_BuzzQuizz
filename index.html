@@ -69,107 +69,15 @@
             </div>
 
             <div class="cadastro-perguntas escondido">
-                <h3>Crie suas perguntas</h3>
-                
-                <div class="cadastro-pergunta selecionada" onclick="selecionarPerguntaCadastro(this)">
-                    <div class="topo-pergunta">
-                        <h4>Pergunta 1</h4>
-                        <img src="./imagens/Vector.svg" alt="icone-papel-lapis">
-                    </div>
-                    <div class="perguntas-respostas">
-                        <input type="text" class="pergunta" placeholder="Texto da pergunta">
-                        <input type="text" class="cor-pergunta" placeholder="Cor de fundo da pergunta">
 
-                        <h4>Resposta Correta</h4>
-                        <input type="text" class="resposta-certa" placeholder="Texto da resposta">
-                        <input type="text" class="imagem-resposta-certa" placeholder="URL da imagem">
-                        
-                        <h4>Respostas Incorretas</h4>
-                        <div class="resposta-incorreta">
-                            <input type="text" placeholder="Resposta incorreta 1">
-                            <input type="text" placeholder="URL da imagem 1">
-                        </div>
-                        <div class="resposta-incorreta">
-                            <input type="text" placeholder="Resposta incorreta 2">
-                            <input type="text" placeholder="URL da imagem 2">
-                        </div>
-                        <div class="resposta-incorreta">
-                            <input type="text" placeholder="Resposta incorreta 3">
-                            <input type="text" placeholder="URL da imagem 3">
-                        </div>
-                    </div>
-                </div>
-                <div class="cadastro-pergunta" onclick="selecionarPerguntaCadastro(this)">
-                    <div class="topo-pergunta">
-                        <h4>Pergunta 2</h4>
-                        <img src="./imagens/Vector.svg" alt="icone-papel-lapis">
-                    </div>
-                    <div class="perguntas-respostas">
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-
-                        <h4>Resposta Correta</h4>
-                        <input type="text" placeholder="Texto da resposta">
-                        <input type="text" placeholder="URL da imagem">
-
-                        <h4>Respostas Incorretas</h4>
-                        <div class="resposta-incorreta">
-                            <input type="text" placeholder="Resposta incorreta 1">
-                            <input type="text" placeholder="URL da imagem 1">
-                        </div>
-                        <div class="resposta-incorreta">
-                            <input type="text" placeholder="Resposta incorreta 2">
-                            <input type="text" placeholder="URL da imagem 2">
-                        </div>
-                        <div class="resposta-incorreta">
-                            <input type="text" placeholder="Resposta incorreta 3">
-                            <input type="text" placeholder="URL da imagem 3">
-                        </div>
-                    </div>
-                </div>
-                <button onclick="coletarDadosPerguntas()">Prosseguir para criar níveis</button>
             </div>
 
-
             <div class="cadastro-niveis escondido">
-                <h3>Agora, decida os níveis</h3>
 
-                <div class="cadastro-nivel selecionada" onclick="selecionarNivelCadastro(this)">
-                    <div class="topo-nivel">
-                        <h4>Nível 1</h4>
-                        <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
-                    </div>
-                    <div class="nivel">
-                        <input type="text" placeholder="Título do nível" class="titulo-nivel">
-                        <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
-                        <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
-                        <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
-                    </div>
-                </div>
-                <div class="cadastro-nivel" onclick="selecionarNivelCadastro(this)">
-                    <div class="topo-nivel">
-                        <h4>Nível 2</h4>
-                        <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
-                    </div>
-                    <div class="nivel">
-                        <input type="text" placeholder="Título do nível" class="titulo-nivel">
-                        <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
-                        <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
-                        <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
-                    </div>
-                </div>
-                <button onclick="coletarDadosNiveis()">Finalizar Quizz</button>
             </div>
 
             <div class="cadastro-sucesso escondido">
-                <h3>Seu quizz está pronto!</h3>
-                <div class="quizz-imagem">
-                    <div class="filtro-escuro">
-                        <h4>O quão Potterhead você é?</h4>
-                    </div>
-                </div>
-                <button>Acessar Quizz</button>
-                <button onclick="direcionarCadastroParaHome()">Voltar para home</button>
+
             </div>
 
         </div>
@@ -181,8 +89,8 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script src="./js/scripts-home.js"></script>
     <script src="./js/script-pag2.js"></script>
+    <script src="./js/scripts-home.js"></script>
     <script src="./js/script-pag3.js"></script>
 </body>
 
