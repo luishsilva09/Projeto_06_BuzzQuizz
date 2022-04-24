@@ -15,40 +15,34 @@ let listaIds = [];
 function selecionarPerguntaCadastro(containerPergunta) {
     document.querySelector(".cadastro-perguntas .selecionada").classList.remove("selecionada");
     containerPergunta.classList.add("selecionada");
-}
+};
 
 function selecionarNivelCadastro(containerNivel) {
     document.querySelector(".cadastro-niveis .selecionada").classList.remove("selecionada");
     containerNivel.classList.add("selecionada");
-}
+};
 
 // funcoes de redirecionamento entre páginas
 
 function direcionarCadastroPerguntas() {
     document.querySelector(".cadastro-inicial").classList.add("escondido");
     document.querySelector(".cadastro-perguntas").classList.remove("escondido");
-}
+};
 
 function direcionarCadastroNiveis() {
     document.querySelector(".cadastro-perguntas").classList.add("escondido");
     document.querySelector(".cadastro-niveis").classList.remove("escondido");
-}
+};
 
 function direcionarSucessoCadastro() {
     document.querySelector(".cadastro-niveis").classList.add("escondido");
     document.querySelector(".cadastro-sucesso").classList.remove("escondido");
-}
+};
 
 function direcionarExibicaoQuizz() {
     document.querySelector(".cadastro-sucesso").classList.add("escondido");
     document.querySelector(".cadastro-quizz").classList.add("escondido");
-}
-
-function direcionarCadastroParaHome() {
-    document.querySelector(".cadastro-sucesso").classList.add("escondido");
-    document.querySelector(".cadastro-quizz").classList.add("escondido");
-    document.querySelector(".conteudo-home").classList.remove("escondido");
-}
+};
 
 // manipulacao da entrada de informacoes dadas pelo usuario
 function carregarUrlImagem(url) {
@@ -62,26 +56,24 @@ function carregarUrlImagem(url) {
     img.onerror = function () {
         imagemInvalida = true;
     }
-}
+};
 
 function renderizarTelaSucesso() {
     
     document.querySelector(".cadastro-quizz .cadastro-sucesso").innerHTML = "<h3>Seu quizz está pronto!</h3>";
     
     document.querySelector(".cadastro-quizz .cadastro-sucesso").innerHTML += `
-        <div style="background-image: url('${quizz.image}')" class="quizz-imagem" onclick="visualizarQuizzCriado()>
-            <div class="filtro-escuro">
-                <h4>${quizz.title}</h4>
-            </div>
-        </div>
-    `
+        <div style="background-image: url('${quizz.image}')" class="quizz-imagem" onclick="visualizarQuizzCriado()">
+            <div class="filtro-escuro"></div>
+            <h5>${quizz.title}</h5>
+        </div>`
     document.querySelector(".cadastro-sucesso").innerHTML += `
         <button onclick="visualizarQuizzCriado()">Acessar Quizz</button>
-        <button onclick="direcionarCadastroParaHome()">Voltar para home</button>
+        <button onclick="voltaHome()">Voltar para home</button>
     `
 
     console.log(quizz);
-}
+};
 
 function adicionaCadastroNiveisHTML() {
     
@@ -108,7 +100,7 @@ function adicionaCadastroNiveisHTML() {
     document.querySelector(".cadastro-niveis").innerHTML += `
     <button onclick="coletarDadosNiveis()">Finalizar Quizz</button>
     `
-}
+};
 
 function adicionaCadastroPerguntasHTML() {
     
@@ -151,7 +143,7 @@ function adicionaCadastroPerguntasHTML() {
     document.querySelector(".cadastro-perguntas").innerHTML += `
     <button onclick="coletarDadosPerguntas()">Prosseguir para criar níveis</button>
     `
-}
+};
 
 function coletarDadosIniciais() {
     const tituloQuiz = document.querySelector(".informacoes-iniciais .titulo").value.split(" ").filter(palavra => palavra !== "");
@@ -188,7 +180,7 @@ function coletarDadosIniciais() {
             direcionarCadastroPerguntas();
         }
     }, 400);
-}
+};
 
 function coletarDadosPerguntas() {
     const perguntas = document.querySelectorAll(".cadastro-quizz .cadastro-pergunta");
@@ -285,7 +277,7 @@ function coletarDadosPerguntas() {
 
         }, 300 * imgRespostasErradas.length));
     }
-}
+};
 
 function coletarDadosNiveis() {
     const containersNiveis = document.querySelectorAll(".cadastro-niveis .cadastro-nivel");
@@ -376,9 +368,9 @@ function coletarDadosNiveis() {
 
     }
 
-}
+};
 
 function visualizarQuizzCriado() {
     direcionarExibicaoQuizz();
     selecionarQuizzCriado(quizz);
-}
+};

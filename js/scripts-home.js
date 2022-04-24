@@ -45,7 +45,7 @@ function home(){
 };
 
 function meuQuizz(){
-    if (meusQuizzId != ''){
+    if (meusQuizzId != '' && meusQuizzId != null){
         document.querySelector(".conteudo-home .criarQuizz").classList.add("escondido")
         document.querySelector(".conteudo-home .meusQuizz ").classList.remove("escondido")
         for (let i = 0; i < meusQuizzId.length; i++) {

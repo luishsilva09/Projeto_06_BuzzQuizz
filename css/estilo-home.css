@@ -45,8 +45,11 @@ body {
     color:#EC362D;
     font-size:25px;
     cursor: pointer;
+    
 }
-
+.meusQuizz ion-icon:hover{
+    opacity: 50%;
+}
 .txtSeusQuizzes{
     display: flex;
     align-items: center;
@@ -114,9 +117,12 @@ body {
     margin-bottom: 15px;
     margin-right: 10px;
     margin-top: 10px;
+    cursor: pointer;
 
 }
-
+.quizzBanner:hover{
+    opacity: 50%;
+}
 .quizzBanner img{
     height: 181px;
     width: 340px;
