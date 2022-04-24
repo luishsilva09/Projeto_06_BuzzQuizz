@@ -45,9 +45,11 @@ function renderizarQuizzSelecionado() {
 
         document.querySelector(".conteudo-pag2").innerHTML +=
             `<div class="post" id="${i}">
-            <div class="pergunta">${pergunta.texto}</div>
-            <div class="alternativas"></div>
-        </div> `;
+                <div class="pergunta">${pergunta.texto}</div>
+                <div class="alternativas"></div>
+            </div>`
+        ;
+
         while (cont < dadosQuizz.questions[i].answers.length) {
             resposta.push({
                 texto: dadosQuizz.questions[i].answers[cont].text,
@@ -56,12 +58,15 @@ function renderizarQuizzSelecionado() {
             });
             cont++
         };
-        resposta.sort(randOrd)
+
+        resposta.sort(randOrd);
+
         for (let x = 0; x < resposta.length; x++) {
-            let post = document.getElementById(i);
+            let post = document.querySelector(`.post:nth-child(${i + 2})`);
+
             post.querySelector(".pergunta").style.backgroundColor = `${pergunta.cor}`
             post.querySelector(".alternativas").innerHTML += `
-            <div class="resposta "
+            <div class="resposta"
             onclick="seleciona(this)" value="${resposta[x].correto}">
                 <img src="${resposta[x].imagem}">
                 <p>${resposta[x].texto}</p>
