@@ -343,14 +343,9 @@ function coletarDadosNiveis() {
 
                 promisse.catch(function (err) {
                     console.log(`Erro no envio do quizz, status: ${err.response.status}`);
-                    console.log(err.response);
                 });
 
-                console.log(quizz);
-
                 promisse.then(function (response) {
-                    console.log("Bete");
-                    console.log(response.data);
                     
                     const storageIds = localStorage.getItem("listaIds");
 

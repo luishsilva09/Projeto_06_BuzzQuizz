@@ -156,7 +156,3 @@ function reiniciar() {
     document.querySelector(".conteudo-pag2").innerHTML = '';
     renderizarQuizzSelecionado();
 };
-
-
-
-
