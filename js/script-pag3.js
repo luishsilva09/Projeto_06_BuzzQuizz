@@ -82,16 +82,16 @@ function adicionaCadastroNiveisHTML() {
     for(let i = 0; i < qtdNiveis; i++) {
         document.querySelector(".cadastro-quizz .cadastro-niveis").innerHTML += `
             <div class="cadastro-nivel" onclick="selecionarNivelCadastro(this)">
-            <div class="topo-nivel">
-            <h4>Nível ${i + 1}</h4>
-            <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
-            </div>
-            <div class="nivel">
-            <input type="text" placeholder="Título do nível" class="titulo-nivel">
-            <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
-            <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
-            <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
-            </div>
+                <div class="topo-nivel">
+                    <h4>Nível ${i + 1}</h4>
+                    <img class="invisivel" src="./imagens/Vector.svg" alt="icone-papel-lapis">
+                </div>
+                <div class="nivel">
+                    <input type="text" placeholder="Título do nível" class="titulo-nivel">
+                    <input type="text" placeholder="% de acerto mínimo" class="porcentagem-acerto">
+                    <input type="text" placeholder="URL da imagem do nível" class="img-nivel">
+                    <input type="text" placeholder="Descrição do nível" class="descricao-nivel">
+                </div>
             </div>
             `
     }
@@ -109,11 +109,11 @@ function adicionaCadastroPerguntasHTML() {
     for(let i = 0; i < qtdPerguntas; i++) {
         document.querySelector(".cadastro-quizz .cadastro-perguntas").innerHTML += `
         <div class="cadastro-pergunta" onclick="selecionarPerguntaCadastro(this)">
-        <div class="topo-pergunta">
-        <h4>Pergunta ${i + 1}</h4>
+            <div class="topo-pergunta">
+                <h4>Pergunta ${i + 1}</h4>
                 <img src="./imagens/Vector.svg" alt="icone-papel-lapis">
-                </div>
-                <div class="perguntas-respostas">
+            </div>
+            <div class="perguntas-respostas">
                 <input type="text" class="pergunta" placeholder="Texto da pergunta">
                 <input type="text" class= "cor-pergunta" placeholder="Cor de fundo da pergunta">
                 
@@ -123,19 +123,19 @@ function adicionaCadastroPerguntasHTML() {
                 
                 <h4>Respostas Incorretas</h4>
                 <div class="resposta-incorreta">
-                <input type="text" placeholder="Resposta incorreta 1">
-                <input type="text" placeholder="URL da imagem 1">
+                    <input type="text" placeholder="Resposta incorreta 1">
+                    <input type="text" placeholder="URL da imagem 1">
                 </div>
                 <div class="resposta-incorreta">
-                <input type="text" placeholder="Resposta incorreta 2">
-                <input type="text" placeholder="URL da imagem 2">
+                    <input type="text" placeholder="Resposta incorreta 2">
+                    <input type="text" placeholder="URL da imagem 2">
                 </div>
                 <div class="resposta-incorreta">
                     <input type="text" placeholder="Resposta incorreta 3">
                     <input type="text" placeholder="URL da imagem 3">
-                    </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+        </div>
                     `
     }
     
@@ -184,7 +184,8 @@ function coletarDadosIniciais() {
 
 function coletarDadosPerguntas() {
     const perguntas = document.querySelectorAll(".cadastro-quizz .cadastro-pergunta");
-    let timeouts = [];
+    document.querySelector(".cadastro-perguntas > button").removeAttribute("onclick");
+    const timeouts = [];
 
     for(let i = 0; i < qtdPerguntas; i++) {
         let respostas = [];
@@ -266,6 +267,7 @@ function coletarDadosPerguntas() {
                 for(let i = 0; i < timeouts.length; i++) {
                     clearTimeout(timeouts[i]);
                 }
+                document.querySelector(".cadastro-perguntas > button").setAttribute("onclick", "coletarDadosPerguntas()");
             }
 
             if((i + 1) === qtdPerguntas) {
@@ -281,10 +283,13 @@ function coletarDadosPerguntas() {
 
 function coletarDadosNiveis() {
     const containersNiveis = document.querySelectorAll(".cadastro-niveis .cadastro-nivel");
+    document.querySelector(".cadastro-niveis > button").removeAttribute("onclick");
+
     let porcentagemMaiorZero = 0;
     qtdNiveis = containersNiveis.length;
     const porcentagensNiveis = [];
     const niveis = [];
+    const timeouts = [];
     
     for(let i = 0; i < containersNiveis.length; i++) {
         const containerNivel = containersNiveis[i].querySelector(".nivel");
@@ -302,7 +307,9 @@ function coletarDadosNiveis() {
             porcentagemMaiorZero++;
         }
 
-        setTimeout(function () {
+        timeouts.push(setTimeout(function () {
+            let excluirTimeouts = true;
+
             if(tituloNivelFormatado.length < 10) {
                 alert("O título do nível deve ter pelo menos 10 caracteres");
             } else if(porcentagemAcerto < 0 || porcentagemAcerto > 100 || isNaN(porcentagemAcerto)) {
@@ -316,6 +323,8 @@ function coletarDadosNiveis() {
             } else if(porcentagensNiveis.indexOf(porcentagemAcerto) !== -1) {
                 alert("A porcentagem de níves diferentes não podem ser iguais");
             } else {
+                excluirTimeouts = false;
+
                 porcentagensNiveis.push(porcentagemAcerto)
 
                 niveis.push({
@@ -325,6 +334,14 @@ function coletarDadosNiveis() {
                     minValue: porcentagemAcerto,
                 });
 
+            }
+
+            if(excluirTimeouts) {
+                document.querySelector("cadastro-niveis > button").setAttribute("onclick", "coletarDadosNiveis()");
+
+                for(let i = 0; i < timeouts.length; i++) {
+                    clearTimeout(timeouts[i]);
+                }
             }
 
             if((i + 1) === qtdNiveis) {
@@ -359,7 +376,7 @@ function coletarDadosNiveis() {
                 });
 
             }
-        }, 400 * (qtdNiveis));
+        }, 400 * (qtdNiveis)));
 
     }
 

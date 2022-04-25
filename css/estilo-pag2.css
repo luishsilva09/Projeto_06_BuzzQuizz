@@ -11,7 +11,7 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    
+    box-sizing: border-box;
 }
 
 .bannerPrincipal{
@@ -24,10 +24,14 @@
     justify-content: center;
     color: #fff;
     font-size: 39px;
-    
+    text-align: center;
 }
+
+.bannerPrincipal > p {
+    margin: 0 4px;
+}
+
 .post{
-    
     height: 750px;
     width: 800px;
     margin-top: 42px;
@@ -35,35 +39,41 @@
     padding: 28px 37px;
     margin-bottom: 50px;
     box-sizing: border-box;
-    
-    
-    
 }
+
 .post-final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 450px;
     width: 800px;
     margin-top: 42px;
     box-shadow: 0px 0px 10px  rgba(0, 0, 0,0.25);
-    padding: 28px 37px;
+    padding: 28px 30px;
     margin-bottom: 50px;
     box-sizing: border-box;
-    
-    
+
 }
+
 .qtAcertos{
     background-color: #EC362D;
     height: 99px;
-    width: 727px;
+    width: 100%;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 23px;
     font-weight: 700;
-    color:#fff
+    color:#fff; 
+    text-align: center;
 }
 
-.mensagem{
+.qtAcertos > p {
+    margin: 6px 10px;
+}
+
+.mensagem {
     display: flex;
     font-size: 19px;
     font-weight: bold;
@@ -90,19 +100,17 @@
     word-break: break-all;
     text-align: center;
     text-shadow:0 0 1px rgb(151, 151, 151);;
-
-    
 }
 
 
 .alternativas{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;  
+    justify-content: space-around;  
 }
 
 .resposta p{
-    width: 360px;
+    width: 330px;
     font-size:20px;
     font-weight: 700;
     margin: 30px 0px; 
@@ -164,7 +172,7 @@
     .post > .pergunta,
     .qtAcertos{
         height: 89px;
-        width: 340px;
+        width: 100%;
         font-size: 19px;
         text-align: center;
     }
@@ -182,28 +190,39 @@
         font-size: 13px;
         margin: 10px 0px;
     }
-
-    .post-final{
-        height: auto;
-    }
-
+    
     .mensagem{
-        display: block;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
-
+    
     .mensagem img{
         height: 255px;
         width: 340px;
+        margin: 0;
+    }
+
+    .mensagem > h2 {
+        margin-top: 10px;
     }
 
 }
+
 @media screen and (max-width: 370px){
-    .post, .post-final{
+    .post,
+    .post-final{
         width: 100%;
         flex-wrap: wrap;
     }
-    .resposta > img{
-        width: auto;
+
+    .resposta > img,
+    .mensagem > img  {
+        width: 100%;
+    }
+
+    .qtAcertos {
+        height: auto;
     }
 }
 

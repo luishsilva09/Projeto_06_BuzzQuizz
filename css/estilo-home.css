@@ -13,7 +13,7 @@ body {
 }
 
 .barra-topo {
-    width: 100vw;
+    width: 100%;
     padding: 15px 0;
     font-size: 37px;
     text-align: center;
@@ -165,6 +165,7 @@ body {
     .listaQuizz{
         flex-direction: column;
     }
+
     .conteudo-home{
         width: auto;
     }
